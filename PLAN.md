@@ -236,3 +236,9 @@ check again.
   - Documented SheetJS vulnerability acceptance in DECISIONS.md
 - **Deferred:** SheetJS replacement (significant refactor, low practical risk for client-side tool)
 - **Next review:** 2026-06-19
+
+### 2026-09-23 — Audit (health check only)
+- **Findings:** 0 critical, 5 important, 5 nice-to-have
+- **Top concerns:** Cell comparison uses only File A's detected column type (differ.ts), so swapping files or comparing CSV vs XLSX can flip results or flag rows whose displayed values look identical (e.g. text date vs Date object). The east-of-UTC Date-branch defect (task 9) is still open. Local checkout sits on the merged client-mode-2026-08 branch, behind origin/main, and HANDOFF/PLAN do not record the Aug client-mode conversion or the Sep og:image commit; CLAUDE.md design-system path is broken.
+- **Action taken:** Audit only — no fixes this session
+- **Next review:** 2026-12-22
